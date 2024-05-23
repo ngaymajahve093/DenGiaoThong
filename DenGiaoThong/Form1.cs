@@ -216,11 +216,6 @@ namespace DenGiaoThong
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            serialPort1.WriteLine("haha");
-        }
-
 
         public void getPortNameFn()
         {
@@ -249,17 +244,39 @@ namespace DenGiaoThong
 
         private void btnOFF_Click(object sender, EventArgs e)
         {
-            serialPort1.WriteLine("M0");
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.WriteLine("M0");
+            }
+            else
+            {
+                MessageBox.Show("Chưa kết nối với hệ thống!!!");
+            }
+            
         }
 
         private void btn_Sang_Click(object sender, EventArgs e)
         {
-            serialPort1.WriteLine("M1");
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.WriteLine("M1");
+            }
+            else
+            {
+                MessageBox.Show("Chưa kết nối với hệ thống!!!");
+            }
         }
 
         private void btn_Toi_Click(object sender, EventArgs e)
         {
-            serialPort1.WriteLine("M2");
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.WriteLine("M2");
+            }
+            else
+            {
+                MessageBox.Show("Chưa kết nối với hệ thống!!!");
+            }
         }
 
     }
